@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Settings-->
         <scene sceneID="vO4-es-3Bb">
             <objects>
                 <viewController id="0DP-1j-nuD" sceneMemberID="viewController">
@@ -19,13 +19,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="TZb-qg-TvM"/>
+                    <tabBarItem key="tabBarItem" title="Settings" id="TZb-qg-TvM"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BwM-kf-hqW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="185" y="1695"/>
+            <point key="canvasLocation" x="131" y="1677"/>
         </scene>
-        <!--Item 2-->
+        <!--Map-->
         <scene sceneID="TD5-Nw-qk9">
             <objects>
                 <viewController id="cXV-hq-rlO" sceneMemberID="viewController">
@@ -38,16 +38,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="yGr-KF-on5"/>
+                    <tabBarItem key="tabBarItem" title="Map" id="yGr-KF-on5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6d9-XY-ddo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="880" y="1276"/>
         </scene>
-        <!--Item 1-->
+        <!--Camera-->
         <scene sceneID="iHh-tn-rMP">
             <objects>
-                <viewController id="zMI-4r-66Z" sceneMemberID="viewController">
+                <viewController definesPresentationContext="YES" modalTransitionStyle="flipHorizontal" id="zMI-4r-66Z" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ova-14-wYO"/>
                         <viewControllerLayoutGuide type="bottom" id="c67-Ig-t9b"/>
@@ -59,6 +59,16 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0bp-9k-uC7">
                                 <rect key="frame" x="130" y="122" width="341" height="198"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xwl-k8-s9C">
+                                <rect key="frame" x="144" y="455" width="56" height="30"/>
+                                <state key="normal" title="Activate">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RW5-yA-EQH">
+                                <rect key="frame" x="241" y="455" width="55" height="30"/>
+                                <state key="normal" title="Capture"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -66,7 +76,7 @@
                             <constraint firstItem="0bp-9k-uC7" firstAttribute="centerX" secondItem="iY2-QA-Hkm" secondAttribute="centerX" id="V9g-ec-Kgx"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="s9p-Ts-Ypw"/>
+                    <tabBarItem key="tabBarItem" title="Camera" id="s9p-Ts-Ypw"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="htu-Ak-TKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
