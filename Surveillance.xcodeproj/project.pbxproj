@@ -13,6 +13,8 @@
 		C0077FB21CAEC67600C9DFF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0077FB01CAEC67600C9DFF7 /* Main.storyboard */; };
 		C0077FB41CAEC67700C9DFF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0077FB31CAEC67700C9DFF7 /* Assets.xcassets */; };
 		C0077FB71CAEC67700C9DFF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0077FB51CAEC67700C9DFF7 /* LaunchScreen.storyboard */; };
+		F8579F451CAF31D9003C7BEB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8579F441CAF31D9003C7BEB /* MapKit.framework */; };
+		F8579F471CAF3340003C7BEB /* eye.png in Resources */ = {isa = PBXBuildFile; fileRef = F8579F461CAF3340003C7BEB /* eye.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		C0077FB31CAEC67700C9DFF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0077FB61CAEC67700C9DFF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C0077FB81CAEC67700C9DFF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8579F441CAF31D9003C7BEB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F8579F461CAF3340003C7BEB /* eye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eye.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8579F451CAF31D9003C7BEB /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,7 @@
 		C0077F9B1CAEC67600C9DFF7 = {
 			isa = PBXGroup;
 			children = (
+				F8579F441CAF31D9003C7BEB /* MapKit.framework */,
 				C0077FA61CAEC67600C9DFF7 /* Surveillance */,
 				C0077FA51CAEC67600C9DFF7 /* Products */,
 			);
@@ -64,6 +70,7 @@
 				C0077FAE1CAEC67600C9DFF7 /* ViewController.m */,
 				C0077FB01CAEC67600C9DFF7 /* Main.storyboard */,
 				C0077FB31CAEC67700C9DFF7 /* Assets.xcassets */,
+				F8579F461CAF3340003C7BEB /* eye.png */,
 				C0077FB51CAEC67700C9DFF7 /* LaunchScreen.storyboard */,
 				C0077FB81CAEC67700C9DFF7 /* Info.plist */,
 				C0077FA71CAEC67600C9DFF7 /* Supporting Files */,
@@ -110,6 +117,14 @@
 				TargetAttributes = {
 					C0077FA31CAEC67600C9DFF7 = {
 						CreatedOnToolsVersion = 7.2;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -137,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0077FB71CAEC67700C9DFF7 /* LaunchScreen.storyboard in Resources */,
+				F8579F471CAF3340003C7BEB /* eye.png in Resources */,
 				C0077FB41CAEC67700C9DFF7 /* Assets.xcassets in Resources */,
 				C0077FB21CAEC67600C9DFF7 /* Main.storyboard in Resources */,
 			);
@@ -300,6 +316,7 @@
 				C0077FBD1CAEC67700C9DFF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
