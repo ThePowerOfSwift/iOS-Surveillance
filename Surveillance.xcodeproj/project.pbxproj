@@ -28,6 +28,7 @@
 		C0077FB61CAEC67700C9DFF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C0077FB81CAEC67700C9DFF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8579F441CAF31D9003C7BEB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F89135181CAF5A0100DD5F9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Base; path = Base.lproj/PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +71,7 @@
 				C0077FB31CAEC67700C9DFF7 /* Assets.xcassets */,
 				C0077FB51CAEC67700C9DFF7 /* LaunchScreen.storyboard */,
 				C0077FB81CAEC67700C9DFF7 /* Info.plist */,
+				F89135171CAF5A0100DD5F9C /* PrefixHeader.pch */,
 				C0077FA71CAEC67600C9DFF7 /* Supporting Files */,
 			);
 			path = Surveillance;
@@ -184,6 +186,14 @@
 				C0077FB61CAEC67700C9DFF7 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F89135171CAF5A0100DD5F9C /* PrefixHeader.pch */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F89135181CAF5A0100DD5F9C /* Base */,
+			);
+			name = PrefixHeader.pch;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
