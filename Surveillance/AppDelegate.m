@@ -7,6 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
+#import "SettingsViewController.h"
+#import "CameraViewController.h"
+#import "MapViewController.h"
+#import "MultipeerViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +22,23 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    CameraViewController *cameraVC = [[CameraViewController alloc] init];
+    cameraVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Camera" image:[UIImage imageNamed:@"camera"] tag:100];
+    
+    MapViewController *mapVC = [[MapViewController alloc] init];
+    mapVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Map" image:[UIImage imageNamed:@"earth"] tag:101];
+    
+    MultipeerViewController *multipeerVC = [[MultipeerViewController alloc] init];
+    multipeerVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Peer" image:[UIImage imageNamed:@"multipeer"] tag:102];
+    
+    SettingsViewController *settingsVC = [[SettingsViewController alloc] init];
+    settingsVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Settings" image:[UIImage imageNamed:@"gear"] tag:103];
+    
+
+    UITabBarController *tabVC = [[UITabBarController alloc] init];
+    tabVC.viewControllers = [NSArray arrayWithObjects:cameraVC, mapVC, multipeerVC, settingsVC, nil];
+    
+    self.window.rootViewController = tabVC;
     return YES;
 }
 
