@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B63667D1CB152510029EB65 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6366741CB152510029EB65 /* Accelerate.framework */; };
+		3B63667E1CB152510029EB65 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6366751CB152510029EB65 /* AVFoundation.framework */; };
+		3B63667F1CB152510029EB65 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6366761CB152510029EB65 /* CoreFoundation.framework */; };
+		3B6366801CB152510029EB65 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6366771CB152510029EB65 /* CoreGraphics.framework */; };
+		3B6366811CB152510029EB65 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6366781CB152510029EB65 /* CoreImage.framework */; };
+		3B6366821CB152510029EB65 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6366791CB152510029EB65 /* CoreMedia.framework */; };
+		3B6366831CB152510029EB65 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B63667A1CB152510029EB65 /* CoreVideo.framework */; };
+		3B6366841CB152510029EB65 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B63667B1CB152510029EB65 /* Foundation.framework */; };
+		3B6366851CB152510029EB65 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B63667C1CB152510029EB65 /* QuartzCore.framework */; };
+		3B6366871CB1525B0029EB65 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6366861CB1525A0029EB65 /* AssetsLibrary.framework */; };
+		3B6366891CB152680029EB65 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6366881CB152680029EB65 /* UIKit.framework */; };
 		C0077FA91CAEC67600C9DFF7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0077FA81CAEC67600C9DFF7 /* main.m */; };
 		C0077FAC1CAEC67600C9DFF7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0077FAB1CAEC67600C9DFF7 /* AppDelegate.m */; };
 		C0077FAF1CAEC67600C9DFF7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0077FAE1CAEC67600C9DFF7 /* ViewController.m */; };
@@ -21,6 +32,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B6366741CB152510029EB65 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		3B6366751CB152510029EB65 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		3B6366761CB152510029EB65 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		3B6366771CB152510029EB65 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3B6366781CB152510029EB65 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		3B6366791CB152510029EB65 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		3B63667A1CB152510029EB65 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		3B63667B1CB152510029EB65 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3B63667C1CB152510029EB65 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3B6366861CB1525A0029EB65 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		3B6366881CB152680029EB65 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C0077FA41CAEC67600C9DFF7 /* Surveillance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Surveillance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0077FA81CAEC67600C9DFF7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C0077FAA1CAEC67600C9DFF7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -48,6 +70,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B6366891CB152680029EB65 /* UIKit.framework in Frameworks */,
+				3B6366871CB1525B0029EB65 /* AssetsLibrary.framework in Frameworks */,
+				3B63667D1CB152510029EB65 /* Accelerate.framework in Frameworks */,
+				3B63667E1CB152510029EB65 /* AVFoundation.framework in Frameworks */,
+				3B63667F1CB152510029EB65 /* CoreFoundation.framework in Frameworks */,
+				3B6366801CB152510029EB65 /* CoreGraphics.framework in Frameworks */,
+				3B6366811CB152510029EB65 /* CoreImage.framework in Frameworks */,
+				3B6366821CB152510029EB65 /* CoreMedia.framework in Frameworks */,
+				3B6366831CB152510029EB65 /* CoreVideo.framework in Frameworks */,
+				3B6366841CB152510029EB65 /* Foundation.framework in Frameworks */,
+				3B6366851CB152510029EB65 /* QuartzCore.framework in Frameworks */,
 				F8579F451CAF31D9003C7BEB /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,6 +91,17 @@
 		C0077F9B1CAEC67600C9DFF7 = {
 			isa = PBXGroup;
 			children = (
+				3B6366881CB152680029EB65 /* UIKit.framework */,
+				3B6366861CB1525A0029EB65 /* AssetsLibrary.framework */,
+				3B6366741CB152510029EB65 /* Accelerate.framework */,
+				3B6366751CB152510029EB65 /* AVFoundation.framework */,
+				3B6366761CB152510029EB65 /* CoreFoundation.framework */,
+				3B6366771CB152510029EB65 /* CoreGraphics.framework */,
+				3B6366781CB152510029EB65 /* CoreImage.framework */,
+				3B6366791CB152510029EB65 /* CoreMedia.framework */,
+				3B63667A1CB152510029EB65 /* CoreVideo.framework */,
+				3B63667B1CB152510029EB65 /* Foundation.framework */,
+				3B63667C1CB152510029EB65 /* QuartzCore.framework */,
 				F8579F441CAF31D9003C7BEB /* MapKit.framework */,
 				C0077FA61CAEC67600C9DFF7 /* Surveillance */,
 				C0077FA51CAEC67600C9DFF7 /* Products */,
