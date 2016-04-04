@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qfw-f9-UDQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qfw-f9-UDQ">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Settings-->
         <scene sceneID="vO4-es-3Bb">
             <objects>
-                <viewController id="0DP-1j-nuD" sceneMemberID="viewController">
+                <viewController id="0DP-1j-nuD" customClass="SettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bH2-XP-WN2"/>
                         <viewControllerLayoutGuide type="bottom" id="NTV-ya-OAg"/>
@@ -62,16 +62,16 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="TZb-qg-TvM"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gear" id="TZb-qg-TvM"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BwM-kf-hqW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131" y="1677"/>
+            <point key="canvasLocation" x="131" y="1823"/>
         </scene>
         <!--Map-->
         <scene sceneID="TD5-Nw-qk9">
             <objects>
-                <viewController id="cXV-hq-rlO" sceneMemberID="viewController">
+                <viewController id="cXV-hq-rlO" customClass="MapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="A50-hX-v2d"/>
                         <viewControllerLayoutGuide type="bottom" id="x2M-zc-AFV"/>
@@ -86,16 +86,35 @@
                         </subviews>
                         <color key="backgroundColor" name="selectedControlColor" catalog="System" colorSpace="catalog"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" id="yGr-KF-on5"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="earth" id="yGr-KF-on5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6d9-XY-ddo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="880" y="1276"/>
         </scene>
+        <!--MultiPeer-->
+        <scene sceneID="WYC-wd-i0Y">
+            <objects>
+                <viewController id="2iM-59-cPh" customClass="MultipeerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ybR-HW-J6I"/>
+                        <viewControllerLayoutGuide type="bottom" id="doy-ZH-zfO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mNj-Qs-cFC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.62171919341591153" green="1" blue="0.58628343596427179" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="MultiPeer" image="multipeer" id="bhT-bc-gVE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ga9-z8-qUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="807" y="2200"/>
+        </scene>
         <!--Camera-->
         <scene sceneID="iHh-tn-rMP">
             <objects>
-                <viewController definesPresentationContext="YES" modalTransitionStyle="flipHorizontal" id="zMI-4r-66Z" sceneMemberID="viewController">
+                <viewController definesPresentationContext="YES" modalTransitionStyle="flipHorizontal" id="zMI-4r-66Z" customClass="CameraViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ova-14-wYO"/>
                         <viewControllerLayoutGuide type="bottom" id="c67-Ig-t9b"/>
@@ -126,7 +145,7 @@
                             <constraint firstItem="0bp-9k-uC7" firstAttribute="centerX" secondItem="iY2-QA-Hkm" secondAttribute="centerX" id="V9g-ec-Kgx"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Camera" id="s9p-Ts-Ypw"/>
+                    <tabBarItem key="tabBarItem" title="Camera" image="camera" id="s9p-Ts-Ypw"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="htu-Ak-TKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -145,6 +164,7 @@
                         <segue destination="zMI-4r-66Z" kind="relationship" relationship="viewControllers" id="3bv-Jl-SDs"/>
                         <segue destination="cXV-hq-rlO" kind="relationship" relationship="viewControllers" id="UtO-Ii-84n"/>
                         <segue destination="0DP-1j-nuD" kind="relationship" relationship="viewControllers" id="Fvd-Gj-vgB"/>
+                        <segue destination="2iM-59-cPh" kind="relationship" relationship="viewControllers" id="XR1-MY-KxH"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KDJ-nY-PTO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -153,6 +173,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="camera" width="30" height="30"/>
+        <image name="earth" width="25" height="25"/>
         <image name="eye" width="19" height="19"/>
+        <image name="gear" width="25" height="25"/>
+        <image name="multipeer" width="25" height="25"/>
     </resources>
 </document>

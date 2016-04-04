@@ -22,7 +22,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    CameraViewController *cameraVC = [[CameraViewController alloc] init];
+    /*CameraViewController *cameraVC = [[CameraViewController alloc] init];
     cameraVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Camera" image:[UIImage imageNamed:@"camera"] tag:100];
     
     MapViewController *mapVC = [[MapViewController alloc] init];
@@ -38,7 +38,7 @@
     UITabBarController *tabVC = [[UITabBarController alloc] init];
     tabVC.viewControllers = [NSArray arrayWithObjects:cameraVC, mapVC, multipeerVC, settingsVC, nil];
     
-    self.window.rootViewController = tabVC;
+    self.window.rootViewController = tabVC;*/
     return YES;
 }
 
