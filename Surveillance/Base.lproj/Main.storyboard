@@ -110,7 +110,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Underconstruction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCo-GW-kJO">
                                 <rect key="frame" x="210" y="134" width="180" height="51"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -134,29 +134,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="eye" translatesAutoresizingMaskIntoConstraints="NO" id="0bp-9k-uC7">
-                                <rect key="frame" x="130" y="122" width="341" height="198"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0bp-9k-uC7" userLabel="MaskView">
+                                <rect key="frame" x="130" y="36" width="341" height="198"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RW5-yA-EQH">
-                                <rect key="frame" x="241" y="455" width="75" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Capture"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xwl-k8-s9C">
-                                <rect key="frame" x="66" y="441" width="124" height="58"/>
+                                <rect key="frame" x="130" y="461" width="87" height="24"/>
                                 <state key="normal" title="Activate">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="startTapped:" destination="zMI-4r-66Z" eventType="touchUpInside" id="i6n-bU-fQ5"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6mv-sN-aNp" userLabel="VideoView">
+                                <rect key="frame" x="130" y="260" width="341" height="160"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RW5-yA-EQH">
+                                <rect key="frame" x="263" y="461" width="75" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Capture"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" name="selectedControlColor" catalog="System" colorSpace="catalog"/>
                         <color key="tintColor" name="selectedMenuItemTextColor" catalog="System" colorSpace="catalog"/>
-                        <constraints>
-                            <constraint firstItem="0bp-9k-uC7" firstAttribute="leading" secondItem="iY2-QA-Hkm" secondAttribute="leadingMargin" constant="110" id="Mrj-k9-p8N"/>
-                            <constraint firstItem="0bp-9k-uC7" firstAttribute="centerX" secondItem="iY2-QA-Hkm" secondAttribute="centerX" id="V9g-ec-Kgx"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Camera" image="camera" id="s9p-Ts-Ypw"/>
+                    <connections>
+                        <outlet property="VideoVIew" destination="6mv-sN-aNp" id="8Kb-5O-A2i"/>
+                        <outlet property="maskView" destination="0bp-9k-uC7" id="MAD-ue-wz4"/>
+                        <outlet property="startButton" destination="xwl-k8-s9C" id="I5q-6j-CJH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="htu-Ak-TKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -186,7 +194,6 @@
     <resources>
         <image name="camera" width="25" height="25"/>
         <image name="earth" width="25" height="25"/>
-        <image name="eye" width="19" height="19"/>
         <image name="gear" width="25" height="25"/>
         <image name="multipeer" width="25" height="25"/>
     </resources>

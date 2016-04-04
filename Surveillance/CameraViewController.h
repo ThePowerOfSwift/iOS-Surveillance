@@ -1,17 +1,18 @@
 //
-//  CameraViewController.h
-//  Surveillance
+//  ViewController.h
+//  OpenCV Test
 //
-//  Created by Dillon Butt on 2016-04-02.
-//  Copyright © 2016 Dillon Butt. All rights reserved.
+//  Created by Colin Power on 2016-04-02.
+//  Copyright © 2016 Colin Power. All rights reserved.
 //
 
-#ifndef CameraViewController_h
-#define CameraViewController_h
+
 #import <UIKit/UIKit.h>
 
-@interface CameraViewController : UIViewController
+
+@interface CameraViewController : UIViewController <CvVideoCameraDelegate>
+{
+    
+}
 
 @end
-
-#endif /* CameraViewController_h */
