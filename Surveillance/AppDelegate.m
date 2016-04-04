@@ -22,6 +22,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    //Colin moved this stuff to interface builder
     /*CameraViewController *cameraVC = [[CameraViewController alloc] init];
     cameraVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Camera" image:[UIImage imageNamed:@"camera"] tag:100];
     

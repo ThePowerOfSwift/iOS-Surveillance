@@ -81,12 +81,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cqx-N0-NfI">
-                                <rect key="frame" x="0.0" y="56" width="600" height="316"/>
+                                <rect key="frame" x="0.0" y="45" width="600" height="316"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" name="selectedControlColor" catalog="System" colorSpace="catalog"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="earth" id="yGr-KF-on5"/>
+                    <connections>
+                        <outlet property="map" destination="cqx-N0-NfI" id="SiB-Dr-LpC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6d9-XY-ddo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -103,6 +106,14 @@
                     <view key="view" contentMode="scaleToFill" id="mNj-Qs-cFC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Underconstruction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCo-GW-kJO">
+                                <rect key="frame" x="210" y="134" width="180" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="0.62171919341591153" green="1" blue="0.58628343596427179" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="MultiPeer" image="multipeer" id="bhT-bc-gVE"/>
@@ -173,7 +184,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="camera" width="30" height="30"/>
+        <image name="camera" width="38" height="38"/>
         <image name="earth" width="25" height="25"/>
         <image name="eye" width="19" height="19"/>
         <image name="gear" width="25" height="25"/>
