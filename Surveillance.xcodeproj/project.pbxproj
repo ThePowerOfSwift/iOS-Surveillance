@@ -18,6 +18,7 @@
 		3B6366851CB152510029EB65 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B63667C1CB152510029EB65 /* QuartzCore.framework */; };
 		3B6366871CB1525B0029EB65 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6366861CB1525A0029EB65 /* AssetsLibrary.framework */; };
 		3B6366891CB152680029EB65 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6366881CB152680029EB65 /* UIKit.framework */; };
+		3BB2983D1CB326F200076755 /* Backup.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3BB2983C1CB326F200076755 /* Backup.mm */; };
 		C0077FA91CAEC67600C9DFF7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0077FA81CAEC67600C9DFF7 /* main.m */; };
 		C0077FAC1CAEC67600C9DFF7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0077FAB1CAEC67600C9DFF7 /* AppDelegate.m */; };
 		C0077FAF1CAEC67600C9DFF7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0077FAE1CAEC67600C9DFF7 /* ViewController.m */; };
@@ -43,6 +44,8 @@
 		3B63667C1CB152510029EB65 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3B6366861CB1525A0029EB65 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		3B6366881CB152680029EB65 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3BB2983B1CB326DC00076755 /* Backup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Backup.h; sourceTree = "<group>"; };
+		3BB2983C1CB326F200076755 /* Backup.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Backup.mm; sourceTree = "<group>"; };
 		3BE98BD81CB3113A00446C29 /* CameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		C0077FA41CAEC67600C9DFF7 /* Surveillance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Surveillance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0077FA81CAEC67600C9DFF7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -129,6 +132,8 @@
 				C0077FA71CAEC67600C9DFF7 /* Supporting Files */,
 				C0077FBE1CB03A1B00C9DFF7 /* SettingsViewController.m */,
 				C0077FC01CB03A3300C9DFF7 /* SettingsViewController.h */,
+				3BB2983B1CB326DC00076755 /* Backup.h */,
+				3BB2983C1CB326F200076755 /* Backup.mm */,
 				3BE98BD81CB3113A00446C29 /* CameraViewController.h */,
 				C0077FC81CB0415D00C9DFF7 /* CameraViewController.mm */,
 				C0077FC21CB040CE00C9DFF7 /* MapViewController.h */,
@@ -226,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0077FAF1CAEC67600C9DFF7 /* ViewController.m in Sources */,
+				3BB2983D1CB326F200076755 /* Backup.mm in Sources */,
 				C0077FAC1CAEC67600C9DFF7 /* AppDelegate.m in Sources */,
 				C0077FC51CB0413A00C9DFF7 /* MapViewController.m in Sources */,
 				C0077FA91CAEC67600C9DFF7 /* main.m in Sources */,
