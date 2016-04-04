@@ -153,6 +153,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="eye" width="58" height="58"/>
+        <image name="eye" width="19" height="19"/>
     </resources>
 </document>
