@@ -18,9 +18,14 @@
 @end
 
 @implementation AppDelegate
-
+@synthesize tableData;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    //global data variable
+    tableData = [NSMutableArray arrayWithObjects:@"TimeStamp Data", nil];
+    NSLog(@"Table Made");
+    
     // Override point for customization after application launch.
     
     //Colin moved this stuff to interface builder

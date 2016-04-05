@@ -10,7 +10,9 @@
 #define MultipeerViewController_h
 #import <UIKit/UIKit.h>
 
-@interface MultipeerViewController : UIViewController
+@interface MultipeerViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+//@property (strong, nonatomic) NSMutableArray *tableData;
 
 @end
 
