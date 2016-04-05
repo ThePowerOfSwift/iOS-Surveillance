@@ -1,5 +1,5 @@
 //
-//  CameraViewController.h
+//  MultipeerViewController.h
 //  Surveillance
 //
 //  Created by Dillon Butt on 2016-04-02.
@@ -11,6 +11,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CameraViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UILabel *timeStampLabel;
 
 @end
 

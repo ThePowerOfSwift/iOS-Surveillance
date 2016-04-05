@@ -17,17 +17,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F4y-xI-pqk">
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F4y-xI-pqk">
                                 <rect key="frame" x="0.0" y="551" width="600" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <tabBarItem title="Camera" id="ZJL-4J-bYr"/>
-                                    <tabBarItem title="Map" id="Olt-zB-YGJ"/>
-                                    <tabBarItem title="Settings" id="W3D-7r-hoa"/>
+                                    <tabBarItem title="Camera" image="camera" id="ZJL-4J-bYr"/>
+                                    <tabBarItem title="Map" image="earth" id="Olt-zB-YGJ"/>
+                                    <tabBarItem title="MultiPeer" image="multipeer" id="zAP-Ni-mAd"/>
+                                    <tabBarItem title="Settings" image="gear" id="W3D-7r-hoa"/>
                                 </items>
                             </tabBar>
                         </subviews>
                         <color key="backgroundColor" name="selectedControlColor" catalog="System" colorSpace="catalog"/>
+                        <constraints>
+                            <constraint firstItem="F4y-xI-pqk" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="Ebl-UX-PFx"/>
+                            <constraint firstItem="F4y-xI-pqk" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="jHa-4z-zAW"/>
+                            <constraint firstItem="F4y-xI-pqk" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="531" id="n1Q-sZ-6Bx"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -35,4 +41,10 @@
             <point key="canvasLocation" x="472" y="-95"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera" width="25" height="25"/>
+        <image name="earth" width="25" height="25"/>
+        <image name="gear" width="25" height="25"/>
+        <image name="multipeer" width="25" height="25"/>
+    </resources>
 </document>

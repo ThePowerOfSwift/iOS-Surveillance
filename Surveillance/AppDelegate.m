@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "SettingsViewController.h"
-#import "CameraViewController.h"
+//#import "CameraViewController.h"
 #import "MapViewController.h"
 #import "MultipeerViewController.h"
 
