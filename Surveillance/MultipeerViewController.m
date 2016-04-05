@@ -17,7 +17,6 @@
 {
     //(YourAppDelegateClass *)[UIApplication sharedApplication].delegat
     AppDelegate* test = [UIApplication sharedApplication].delegate;
-    NSMutableArray *testData = test.tableData;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -25,6 +24,13 @@
     AppDelegate* test = [UIApplication sharedApplication].delegate;
     NSMutableArray *testData = test.tableData;
     return [testData count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    NSString *sectionName = @"Timestamp Data";;
+
+    return sectionName;
 }
 
 
@@ -50,7 +56,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     //sets the tab bar badge value
-    self.tabBarItem.badgeValue = @"1";
+    /*self.tabBarItem.badgeValue = @"1";
     //sets the current time on a label
     NSDate * now = [NSDate date];
     NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
@@ -59,10 +65,11 @@
     NSString *newDateString = [outputFormatter stringFromDate:now];
     NSLog(@"Timestamp: %@", newDateString);
     
+    
     AppDelegate* test = [UIApplication sharedApplication].delegate;
     NSMutableArray *testData = test.tableData;
     
-    [testData addObject:newDateString];
+    //[testData addObject:newDateString];*/
     
     [self.tableView reloadData];
 }

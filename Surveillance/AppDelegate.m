@@ -23,7 +23,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     //global data variable
-    tableData = [NSMutableArray arrayWithObjects:@"TimeStamp Data", nil];
+    tableData = [NSMutableArray arrayWithObjects:@"Placeholder", nil];
     NSLog(@"Table Made");
     
     // Override point for customization after application launch.
