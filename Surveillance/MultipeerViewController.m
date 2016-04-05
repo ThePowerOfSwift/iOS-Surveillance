@@ -8,21 +8,23 @@
 
 #import <Foundation/Foundation.h>
 #import "MultipeerViewController.h"
-
+#import "AppDelegate.h"
 @implementation MultipeerViewController
 {
    // NSMutableArray *tableData;
 }
-@synthesize tableData;
 -(void) viewDidLoad
 {
-    tableData = [NSMutableArray arrayWithObjects:@"TimeStamp Data", nil];
-    NSLog(@"Table Made");
+    //(YourAppDelegateClass *)[UIApplication sharedApplication].delegat
+    AppDelegate* test = [UIApplication sharedApplication].delegate;
+    NSMutableArray *testData = test.tableData;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [tableData count];
+    AppDelegate* test = [UIApplication sharedApplication].delegate;
+    NSMutableArray *testData = test.tableData;
+    return [testData count];
 }
 
 
@@ -36,7 +38,10 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    cell.textLabel.text = [tableData objectAtIndex:indexPath.row];
+    AppDelegate* test = [UIApplication sharedApplication].delegate;
+    NSMutableArray *testData = test.tableData;
+    
+    cell.textLabel.text = [testData objectAtIndex:indexPath.row];
     cell.imageView.image = [UIImage imageNamed:@"camera"];
     return cell;
 }
@@ -53,7 +58,12 @@
     [outputFormatter setDateFormat:@"HH':'mm':'ss' 'dd'/'MM'/'yyyy'"];
     NSString *newDateString = [outputFormatter stringFromDate:now];
     NSLog(@"Timestamp: %@", newDateString);
-    [tableData addObject:newDateString];
+    
+    AppDelegate* test = [UIApplication sharedApplication].delegate;
+    NSMutableArray *testData = test.tableData;
+    
+    [testData addObject:newDateString];
+    
     [self.tableView reloadData];
 }
 

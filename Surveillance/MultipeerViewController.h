@@ -12,7 +12,7 @@
 
 @interface MultipeerViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) NSMutableArray *tableData;
+//@property (strong, nonatomic) NSMutableArray *tableData;
 
 @end
 
