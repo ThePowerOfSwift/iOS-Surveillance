@@ -13,6 +13,7 @@
 
 -(void) viewDidLoad
 {
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     locPark = CLLocationCoordinate2DMake(47.573488, -52.736024);

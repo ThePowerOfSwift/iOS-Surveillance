@@ -19,6 +19,7 @@
 		3B6366871CB1525B0029EB65 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6366861CB1525A0029EB65 /* AssetsLibrary.framework */; };
 		3B6366891CB152680029EB65 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6366881CB152680029EB65 /* UIKit.framework */; };
 		3BB2983D1CB326F200076755 /* Backup.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3BB2983C1CB326F200076755 /* Backup.mm */; };
+		3BB298441CB33E6000076755 /* SettingsData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB298431CB33E6000076755 /* SettingsData.m */; };
 		C0077FA91CAEC67600C9DFF7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0077FA81CAEC67600C9DFF7 /* main.m */; };
 		C0077FAC1CAEC67600C9DFF7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0077FAB1CAEC67600C9DFF7 /* AppDelegate.m */; };
 		C0077FAF1CAEC67600C9DFF7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0077FAE1CAEC67600C9DFF7 /* ViewController.m */; };
@@ -46,6 +47,8 @@
 		3B6366881CB152680029EB65 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3BB2983B1CB326DC00076755 /* Backup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Backup.h; sourceTree = "<group>"; };
 		3BB2983C1CB326F200076755 /* Backup.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Backup.mm; sourceTree = "<group>"; };
+		3BB298421CB33E4F00076755 /* SettingsData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsData.h; sourceTree = "<group>"; };
+		3BB298431CB33E6000076755 /* SettingsData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsData.m; sourceTree = "<group>"; };
 		3BE98BD81CB3113A00446C29 /* CameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		C0077FA41CAEC67600C9DFF7 /* Surveillance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Surveillance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0077FA81CAEC67600C9DFF7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -136,6 +139,8 @@
 				3BB2983C1CB326F200076755 /* Backup.mm */,
 				3BE98BD81CB3113A00446C29 /* CameraViewController.h */,
 				C0077FC81CB0415D00C9DFF7 /* CameraViewController.mm */,
+				3BB298421CB33E4F00076755 /* SettingsData.h */,
+				3BB298431CB33E6000076755 /* SettingsData.m */,
 				C0077FC21CB040CE00C9DFF7 /* MapViewController.h */,
 				C0077FC41CB0413A00C9DFF7 /* MapViewController.m */,
 				C0077FC31CB0411500C9DFF7 /* MultipeerViewController.h */,
@@ -232,6 +237,7 @@
 			files = (
 				C0077FAF1CAEC67600C9DFF7 /* ViewController.m in Sources */,
 				3BB2983D1CB326F200076755 /* Backup.mm in Sources */,
+				3BB298441CB33E6000076755 /* SettingsData.m in Sources */,
 				C0077FAC1CAEC67600C9DFF7 /* AppDelegate.m in Sources */,
 				C0077FC51CB0413A00C9DFF7 /* MapViewController.m in Sources */,
 				C0077FA91CAEC67600C9DFF7 /* main.m in Sources */,

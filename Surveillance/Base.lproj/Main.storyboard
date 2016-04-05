@@ -176,6 +176,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Capture"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9u9-2Y-TZs">
+                                <rect key="frame" x="131" y="231" width="340" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" name="selectedControlColor" catalog="System" colorSpace="catalog"/>
                         <color key="tintColor" name="selectedMenuItemTextColor" catalog="System" colorSpace="catalog"/>
@@ -190,6 +196,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Camera" image="camera" id="s9p-Ts-Ypw"/>
+                    <connections>
+                        <outlet property="timeStampLabel" destination="9u9-2Y-TZs" id="aCr-Wj-RJx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="htu-Ak-TKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

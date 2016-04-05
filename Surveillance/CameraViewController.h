@@ -11,6 +11,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CameraViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UILabel *timeStampLabel;
 
 @end
 
