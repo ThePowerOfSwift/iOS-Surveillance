@@ -17,6 +17,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     locPark = CLLocationCoordinate2DMake(47.573488, -52.736024);
     locExam = CLLocationCoordinate2DMake(47.574988, -52.734324);
+    locMe = [self getCurrentLocation];
     MKCoordinateRegion reg = MKCoordinateRegionMakeWithDistance(locPark, 400, 400);
     self.map.region = reg;
     
@@ -24,17 +25,18 @@
     
     
     // Add annotation
-    MKPointAnnotation* ann = [[MKPointAnnotation alloc] init];
-    ann.coordinate = locPark;
-    ann.title = @"Park here";
-    ann.subtitle = @"Go to exam by 1pm";
-    [self.map addAnnotation:ann];
-    
-    ann = [[MKPointAnnotation alloc] init];
-    ann.coordinate = locExam;
-    ann.title = @"4768 exam";
-    ann.subtitle = @"1-2pm, Mar 21";
-    [self.map addAnnotation:ann];
+    [self createAnnotation:locPark title:@"Park Here" subtitle:@"Go to exam by 1pm"];
+//    MKPointAnnotation* ann = [[MKPointAnnotation alloc] init];
+//    ann.coordinate = locPark;
+//    ann.title = @"Park here";
+//    ann.subtitle = @"Go to exam by 1pm";
+//    [self.map addAnnotation:ann];
+    [self createAnnotation:locExam title:@"4768 exam" subtitle:@"1-2pm, Mar 21"];
+//    ann = [[MKPointAnnotation alloc] init];
+//    ann.coordinate = locExam;
+//    ann.title = @"4768 exam";
+//    ann.subtitle = @"1-2pm, Mar 21";
+//    [self.map addAnnotation:ann];
     
     // Add overlay
     CGFloat lat = locPark.latitude;
@@ -111,12 +113,12 @@
     }
     else if ([annotation.title isEqualToString:@"4768 exam"])
     {
-        static NSString* ident = @"static image";
+        static NSString* ident = @"pin";
         v = [mapView dequeueReusableAnnotationViewWithIdentifier:ident];
         if (v == nil)
         {
             v = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:ident];
-            v.image = [UIImage imageNamed:@"runicon.png"];
+            v.image = [UIImage imageNamed:@"camera.png"];
             v.canShowCallout = YES;
             v.leftCalloutAccessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"writeicon.png"]];
             UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
@@ -149,5 +151,43 @@
     return r;
 }
 
+- (CLLocationCoordinate2D) getCurrentLocation
+{
+    CLLocationManager *lm = [[CLLocationManager alloc] init];
+    lm.delegate = self;
+    lm.desiredAccuracy = kCLLocationAccuracyBest;
+    lm.distanceFilter = kCLDistanceFilterNone;
+    CLLocation *loc = [[CLLocation alloc] init];
+    loc = [lm location];
+    
+    CLLocationCoordinate2D coord;
+    coord.latitude = loc.coordinate.latitude;
+    coord.longitude = loc.coordinate.longitude;
+    if((loc.coordinate.longitude== 0.0 ) && (loc.coordinate.latitude==0.0))
+    {
+        NSLog(@"An error has occurred");
+        return coord;
+    }
+    else
+    {
+        coord = [loc coordinate];
+        return coord;
+    }
+}
+
+- (void) createAnnotation:(CLLocationCoordinate2D)location title:(NSString*)title subtitle:(NSString*)subtitle
+{
+    MKPointAnnotation* ann = [[MKPointAnnotation alloc] init];
+    ann.coordinate = location;
+    ann.title = title;
+    ann.subtitle = subtitle;
+    [self.map addAnnotation:ann];
+}
+
+- (NSString*) getDeviceName
+{
+    
+    return @"Hello world";
+}
 
 @end

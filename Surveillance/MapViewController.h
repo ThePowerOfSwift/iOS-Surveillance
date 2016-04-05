@@ -15,9 +15,12 @@
 {
     CLLocationCoordinate2D locPark;
     CLLocationCoordinate2D locExam;
+    CLLocationCoordinate2D locMe;
 }
 
 @property (weak,nonatomic) IBOutlet MKMapView *map;
+
+- (CLLocationCoordinate2D) getCurrentLocation;
 
 @end
 
