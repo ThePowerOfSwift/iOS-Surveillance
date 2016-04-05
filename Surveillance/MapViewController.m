@@ -15,74 +15,83 @@
 {
     
     [super viewDidLoad];
+    lm = [[CLLocationManager alloc] init];
+    lm.delegate = self;
+    lm.distanceFilter = kCLDistanceFilterNone;
+    lm.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+    
+    NSLog(@"Latitude: %f", lm.location.coordinate.latitude);
+    NSLog(@"Longtitude: %f", lm.location.coordinate.longitude);
+    [lm startUpdatingLocation];
+    
     // Do any additional setup after loading the view, typically from a nib.
-    locPark = CLLocationCoordinate2DMake(47.573488, -52.736024);
-    locExam = CLLocationCoordinate2DMake(47.574988, -52.734324);
+    locPark = CLLocationCoordinate2DMake(47.54745, -52.79422);
+    locExam = CLLocationCoordinate2DMake(47.57490, -52.73529);
     locMe = [self getCurrentLocation];
-    MKCoordinateRegion reg = MKCoordinateRegionMakeWithDistance(locPark, 400, 400);
+    MKCoordinateRegion reg = MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(47.56425,-52.70404), 20000, 20000);
     self.map.region = reg;
     
     self.map.delegate = self;
     
     
     // Add annotation
-    [self createAnnotation:locPark title:@"Park Here" subtitle:@"Go to exam by 1pm"];
+    [self createAnnotation:locPark title:@"Camera 2" subtitle:@"Detected 2 movements"];
 //    MKPointAnnotation* ann = [[MKPointAnnotation alloc] init];
 //    ann.coordinate = locPark;
 //    ann.title = @"Park here";
 //    ann.subtitle = @"Go to exam by 1pm";
 //    [self.map addAnnotation:ann];
-    [self createAnnotation:locExam title:@"4768 exam" subtitle:@"1-2pm, Mar 21"];
+    [self createAnnotation:locExam title:@"Camera 1" subtitle:@"Detected 0 movements"];
 //    ann = [[MKPointAnnotation alloc] init];
 //    ann.coordinate = locExam;
 //    ann.title = @"4768 exam";
 //    ann.subtitle = @"1-2pm, Mar 21";
 //    [self.map addAnnotation:ann];
-    
+    [self createAnnotation:locMe title:@"My Camera" subtitle:@"Your device"];
     // Add overlay
-    CGFloat lat = locPark.latitude;
-    CLLocationDistance metersPerPoint = MKMetersPerMapPointAtLatitude(lat);
-    MKMapPoint c = MKMapPointForCoordinate(locPark);
-    c.x += -43/metersPerPoint;
-    c.y -= 56/metersPerPoint;
-    MKMapPoint p1 = MKMapPointMake(c.x, c.y);
-    p1.y -= 100/metersPerPoint;
-    MKMapPoint p2 = MKMapPointMake(c.x, c.y);
-    p2.x += 90/metersPerPoint;
-    MKMapPoint p3 = MKMapPointMake(c.x, c.y);
-    p3.x += 190/metersPerPoint;
-    p3.y -= 90/metersPerPoint;
-    MKMapPoint p4 = MKMapPointMake(c.x, c.y);
-    p4.x += 100/metersPerPoint;
-    p4.y -= 185/metersPerPoint;
-    MKMapPoint pts[4] = {p1, p2, p3, p4};
-    MKPolygon* poly = [MKPolygon polygonWithPoints:pts count:4];
-    [self.map addOverlay:poly];
+//    CGFloat lat = locPark.latitude;
+//    CLLocationDistance metersPerPoint = MKMetersPerMapPointAtLatitude(lat);
+//    MKMapPoint c = MKMapPointForCoordinate(locPark);
+//    c.x += -43/metersPerPoint;
+//    c.y -= 56/metersPerPoint;
+//    MKMapPoint p1 = MKMapPointMake(c.x, c.y);
+//    p1.y -= 100/metersPerPoint;
+//    MKMapPoint p2 = MKMapPointMake(c.x, c.y);
+//    p2.x += 90/metersPerPoint;
+//    MKMapPoint p3 = MKMapPointMake(c.x, c.y);
+//    p3.x += 190/metersPerPoint;
+//    p3.y -= 90/metersPerPoint;
+//    MKMapPoint p4 = MKMapPointMake(c.x, c.y);
+//    p4.x += 100/metersPerPoint;
+//    p4.y -= 185/metersPerPoint;
+//    MKMapPoint pts[4] = {p1, p2, p3, p4};
+//    MKPolygon* poly = [MKPolygon polygonWithPoints:pts count:4];
+//    [self.map addOverlay:poly];
 }
 
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    MKDirectionsRequest *walkingRouteRequest = [[MKDirectionsRequest alloc] init];
-    walkingRouteRequest.transportType = MKDirectionsTransportTypeWalking;
-    MKMapItem *startPoint = [[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:locPark addressDictionary:nil]];
-    MKMapItem *endPoint = [[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:locExam addressDictionary:nil]];
-    [walkingRouteRequest setSource:startPoint];
-    [walkingRouteRequest setDestination:endPoint];
-    
-    MKDirections *walkingRouteDirections = [[MKDirections alloc] initWithRequest:walkingRouteRequest];
-    [walkingRouteDirections calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse * walkingRouteResponse, NSError *walkingRouteError)
-     {
-         if (walkingRouteError)
-         {
-             NSLog(@"Route error: %@", walkingRouteError);
-         } else
-         {
-             [self.map addOverlay:walkingRouteResponse.routes[0].polyline
-                            level:MKOverlayLevelAboveRoads];
-         }
-     }];
+//    MKDirectionsRequest *walkingRouteRequest = [[MKDirectionsRequest alloc] init];
+//    walkingRouteRequest.transportType = MKDirectionsTransportTypeWalking;
+//    MKMapItem *startPoint = [[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:locPark addressDictionary:nil]];
+//    MKMapItem *endPoint = [[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:locExam addressDictionary:nil]];
+//    [walkingRouteRequest setSource:startPoint];
+//    [walkingRouteRequest setDestination:endPoint];
+//    
+//    MKDirections *walkingRouteDirections = [[MKDirections alloc] initWithRequest:walkingRouteRequest];
+//    [walkingRouteDirections calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse * walkingRouteResponse, NSError *walkingRouteError)
+//     {
+//         if (walkingRouteError)
+//         {
+//             NSLog(@"Route error: %@", walkingRouteError);
+//         } else
+//         {
+//             [self.map addOverlay:walkingRouteResponse.routes[0].polyline
+//                            level:MKOverlayLevelAboveRoads];
+//         }
+//     }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -112,7 +121,7 @@
             v.annotation = annotation;
         }
     }
-    else if ([annotation.title isEqualToString:@"4768 exam"])
+    else if ([annotation.title rangeOfString:@"Camera"].location != NSNotFound)
     {
         static NSString* ident = @"pin";
         v = [mapView dequeueReusableAnnotationViewWithIdentifier:ident];
@@ -154,24 +163,23 @@
 
 - (CLLocationCoordinate2D) getCurrentLocation
 {
-    CLLocationManager *lm = [[CLLocationManager alloc] init];
-    lm.delegate = self;
     lm.desiredAccuracy = kCLLocationAccuracyBest;
     lm.distanceFilter = kCLDistanceFilterNone;
-    CLLocation *loc = [[CLLocation alloc] init];
-    loc = [lm location];
+    cl = [[CLLocation alloc] init];
+    cl = [lm location];
     
     CLLocationCoordinate2D coord;
-    coord.latitude = loc.coordinate.latitude;
-    coord.longitude = loc.coordinate.longitude;
-    if((loc.coordinate.longitude== 0.0 ) && (loc.coordinate.latitude==0.0))
+    
+    coord.latitude = cl.coordinate.latitude;
+    coord.longitude = cl.coordinate.longitude;
+    if((cl.coordinate.longitude== 0.0 ) && (cl.coordinate.latitude==0.0))
     {
         NSLog(@"An error has occurred");
         return coord;
     }
     else
     {
-        coord = [loc coordinate];
+        coord = [cl coordinate];
         return coord;
     }
 }

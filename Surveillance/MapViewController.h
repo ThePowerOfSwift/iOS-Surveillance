@@ -11,11 +11,13 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
-@interface MapViewController : UIViewController <MKMapViewDelegate>
+@interface MapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 {
     CLLocationCoordinate2D locPark;
     CLLocationCoordinate2D locExam;
     CLLocationCoordinate2D locMe;
+    CLLocation* cl;
+    CLLocationManager* lm;
 }
 
 @property (weak,nonatomic) IBOutlet MKMapView *map;
