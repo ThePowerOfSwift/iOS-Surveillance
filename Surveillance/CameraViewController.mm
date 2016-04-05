@@ -17,8 +17,9 @@
     
         //sets the tab bar badge value
         self.tabBarItem.badgeValue = @"1";
-
-    }
+    
+    //use this one liner to set ANY of the badge values on the parent controller's tab bar.
+    [[[[[self tabBarController] tabBar] items] objectAtIndex:2] setBadgeValue:@"test"];    }
 
 
 - (void)viewDidAppear:(BOOL)animated
