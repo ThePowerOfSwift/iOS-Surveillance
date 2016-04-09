@@ -18,6 +18,7 @@
 		3B6366851CB152510029EB65 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B63667C1CB152510029EB65 /* QuartzCore.framework */; };
 		3B6366871CB1525B0029EB65 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6366861CB1525A0029EB65 /* AssetsLibrary.framework */; };
 		3B6366891CB152680029EB65 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B6366881CB152680029EB65 /* UIKit.framework */; };
+		3B7F9EF71CB92E660081799F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3B7F9EF61CB92E660081799F /* .gitignore */; };
 		3BB2983D1CB326F200076755 /* Backup.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3BB2983C1CB326F200076755 /* Backup.mm */; };
 		3BB298441CB33E6000076755 /* SettingsData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB298431CB33E6000076755 /* SettingsData.m */; };
 		C0077FA91CAEC67600C9DFF7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0077FA81CAEC67600C9DFF7 /* main.m */; };
@@ -45,6 +46,7 @@
 		3B63667C1CB152510029EB65 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3B6366861CB1525A0029EB65 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		3B6366881CB152680029EB65 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3B7F9EF61CB92E660081799F /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		3BB2983B1CB326DC00076755 /* Backup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Backup.h; sourceTree = "<group>"; };
 		3BB2983C1CB326F200076755 /* Backup.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Backup.mm; sourceTree = "<group>"; };
 		3BB298421CB33E4F00076755 /* SettingsData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsData.h; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 		C0077FA61CAEC67600C9DFF7 /* Surveillance */ = {
 			isa = PBXGroup;
 			children = (
+				3B7F9EF61CB92E660081799F /* .gitignore */,
 				C0077FAA1CAEC67600C9DFF7 /* AppDelegate.h */,
 				C0077FAB1CAEC67600C9DFF7 /* AppDelegate.m */,
 				C0077FAD1CAEC67600C9DFF7 /* ViewController.h */,
@@ -222,6 +225,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B7F9EF71CB92E660081799F /* .gitignore in Resources */,
 				C0077FB71CAEC67700C9DFF7 /* LaunchScreen.storyboard in Resources */,
 				C0077FB41CAEC67700C9DFF7 /* Assets.xcassets in Resources */,
 				C0077FB21CAEC67600C9DFF7 /* Main.storyboard in Resources */,

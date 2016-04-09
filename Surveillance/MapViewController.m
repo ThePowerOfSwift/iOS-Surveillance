@@ -15,39 +15,30 @@
 {
     
     [super viewDidLoad];
-    lm = [[CLLocationManager alloc] init];
-    lm.delegate = self;
-    lm.distanceFilter = kCLDistanceFilterNone;
-    lm.desiredAccuracy = kCLLocationAccuracyHundredMeters;
-    
-    NSLog(@"Latitude: %f", lm.location.coordinate.latitude);
-    NSLog(@"Longtitude: %f", lm.location.coordinate.longitude);
-    [lm startUpdatingLocation];
-    
     // Do any additional setup after loading the view, typically from a nib.
     locPark = CLLocationCoordinate2DMake(47.54745, -52.79422);
     locExam = CLLocationCoordinate2DMake(47.57490, -52.73529);
     locMe = [self getCurrentLocation];
-    MKCoordinateRegion reg = MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(47.56425,-52.70404), 20000, 20000);
+    MKCoordinateRegion reg = MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(47.56425, -52.70404), 20000, 20000);
     self.map.region = reg;
     
     self.map.delegate = self;
     
     
     // Add annotation
-    [self createAnnotation:locPark title:@"Camera 2" subtitle:@"Detected 2 movements"];
+    [self createAnnotation:locPark title:@"iOS Device Name" subtitle:@"Dillon's House"];
 //    MKPointAnnotation* ann = [[MKPointAnnotation alloc] init];
 //    ann.coordinate = locPark;
 //    ann.title = @"Park here";
 //    ann.subtitle = @"Go to exam by 1pm";
 //    [self.map addAnnotation:ann];
-    [self createAnnotation:locExam title:@"Camera 1" subtitle:@"Detected 0 movements"];
+    [self createAnnotation:locExam title:@"iOS Device Name" subtitle:@"School"];
 //    ann = [[MKPointAnnotation alloc] init];
 //    ann.coordinate = locExam;
 //    ann.title = @"4768 exam";
 //    ann.subtitle = @"1-2pm, Mar 21";
 //    [self.map addAnnotation:ann];
-    [self createAnnotation:locMe title:@"My Camera" subtitle:@"Your device"];
+    
     // Add overlay
 //    CGFloat lat = locPark.latitude;
 //    CLLocationDistance metersPerPoint = MKMetersPerMapPointAtLatitude(lat);
@@ -121,7 +112,7 @@
             v.annotation = annotation;
         }
     }
-    else if ([annotation.title rangeOfString:@"Camera"].location != NSNotFound)
+    else if ([annotation.title isEqualToString:@"iOS Device Name"])
     {
         static NSString* ident = @"pin";
         v = [mapView dequeueReusableAnnotationViewWithIdentifier:ident];
@@ -163,23 +154,24 @@
 
 - (CLLocationCoordinate2D) getCurrentLocation
 {
+    CLLocationManager *lm = [[CLLocationManager alloc] init];
+    lm.delegate = self;
     lm.desiredAccuracy = kCLLocationAccuracyBest;
     lm.distanceFilter = kCLDistanceFilterNone;
-    cl = [[CLLocation alloc] init];
-    cl = [lm location];
+    CLLocation *loc = [[CLLocation alloc] init];
+    loc = [lm location];
     
     CLLocationCoordinate2D coord;
-    
-    coord.latitude = cl.coordinate.latitude;
-    coord.longitude = cl.coordinate.longitude;
-    if((cl.coordinate.longitude== 0.0 ) && (cl.coordinate.latitude==0.0))
+    coord.latitude = loc.coordinate.latitude;
+    coord.longitude = loc.coordinate.longitude;
+    if((loc.coordinate.longitude== 0.0 ) && (loc.coordinate.latitude==0.0))
     {
         NSLog(@"An error has occurred");
         return coord;
     }
     else
     {
-        coord = [cl coordinate];
+        coord = [loc coordinate];
         return coord;
     }
 }
