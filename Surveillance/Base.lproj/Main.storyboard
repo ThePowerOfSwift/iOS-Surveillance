@@ -177,18 +177,15 @@
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6mv-sN-aNp" userLabel="VideoView">
                                 <rect key="frame" x="130" y="260" width="341" height="160"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IY9-ZJ-A90" userLabel="VideoView">
-                                        <rect key="frame" x="0.0" y="0.0" width="341" height="160"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RW5-yA-EQH">
                                 <rect key="frame" x="263" y="461" width="75" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Capture"/>
+                                <connections>
+                                    <action selector="captureButtonTapped" destination="zMI-4r-66Z" eventType="touchUpInside" id="FjQ-C7-Fj0"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9u9-2Y-TZs">
                                 <rect key="frame" x="131" y="231" width="340" height="21"/>
@@ -202,19 +199,18 @@
                         <constraints>
                             <constraint firstItem="RW5-yA-EQH" firstAttribute="centerY" secondItem="xwl-k8-s9C" secondAttribute="centerY" id="2pt-N1-5zR"/>
                             <constraint firstItem="0bp-9k-uC7" firstAttribute="centerX" secondItem="iY2-QA-Hkm" secondAttribute="centerX" id="6Kz-xx-rfz"/>
-                            <constraint firstItem="RW5-yA-EQH" firstAttribute="top" secondItem="IY9-ZJ-A90" secondAttribute="bottom" constant="41" id="AUI-13-biF"/>
                             <constraint firstItem="RW5-yA-EQH" firstAttribute="leading" secondItem="xwl-k8-s9C" secondAttribute="trailing" constant="46" id="KtY-qb-qIT"/>
-                            <constraint firstItem="IY9-ZJ-A90" firstAttribute="centerX" secondItem="iY2-QA-Hkm" secondAttribute="centerX" id="c6M-sW-8qp"/>
                             <constraint firstItem="RW5-yA-EQH" firstAttribute="centerX" secondItem="iY2-QA-Hkm" secondAttribute="centerX" id="iTH-cl-XUQ"/>
                             <constraint firstItem="0bp-9k-uC7" firstAttribute="top" secondItem="ova-14-wYO" secondAttribute="bottom" constant="8" id="nxB-sG-Li2"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Camera" image="camera" id="s9p-Ts-Ypw"/>
                     <connections>
-                        <outlet property="VideoVIew" destination="IY9-ZJ-A90" id="9Do-Yk-Vza"/>
+                        <outlet property="captureButton" destination="RW5-yA-EQH" id="sfS-kY-XYj"/>
                         <outlet property="maskView" destination="0bp-9k-uC7" id="ZYb-m5-sRt"/>
                         <outlet property="startButton" destination="xwl-k8-s9C" id="S1H-iM-Uq3"/>
                         <outlet property="timeStampLabel" destination="9u9-2Y-TZs" id="aCr-Wj-RJx"/>
+                        <outlet property="videoView" destination="6mv-sN-aNp" id="gNQ-5F-pfL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="htu-Ak-TKL" userLabel="First Responder" sceneMemberID="firstResponder"/>

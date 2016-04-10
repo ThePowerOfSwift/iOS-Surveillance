@@ -12,7 +12,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) NSMutableArray *tableData;
-
+@property BOOL isGreyScale;
 
 @end
 

@@ -13,12 +13,13 @@
 @end
 
 @implementation AppDelegate
-@synthesize tableData;
+@synthesize tableData, isGreyScale;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     //global data variable
     tableData = [NSMutableArray arrayWithObjects:@"Placeholder", nil];
+    isGreyScale = NO;
     NSLog(@"Table Made");
     
     // Override point for customization after application launch.
