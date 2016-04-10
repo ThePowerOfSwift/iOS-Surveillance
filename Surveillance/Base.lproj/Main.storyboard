@@ -217,14 +217,19 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k3b-aH-eII">
+                                <rect key="frame" x="8" y="260" width="114" height="160"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" name="selectedControlColor" catalog="System" colorSpace="catalog"/>
                         <color key="tintColor" name="selectedMenuItemTextColor" catalog="System" colorSpace="catalog"/>
                         <constraints>
                             <constraint firstItem="RW5-yA-EQH" firstAttribute="centerY" secondItem="xwl-k8-s9C" secondAttribute="centerY" id="2pt-N1-5zR"/>
                             <constraint firstItem="0bp-9k-uC7" firstAttribute="centerX" secondItem="iY2-QA-Hkm" secondAttribute="centerX" id="6Kz-xx-rfz"/>
+                            <constraint firstItem="k3b-aH-eII" firstAttribute="leading" secondItem="iY2-QA-Hkm" secondAttribute="leadingMargin" constant="-12" id="7Fn-4Y-OWx"/>
                             <constraint firstItem="RW5-yA-EQH" firstAttribute="leading" secondItem="xwl-k8-s9C" secondAttribute="trailing" constant="46" id="KtY-qb-qIT"/>
                             <constraint firstItem="6mv-sN-aNp" firstAttribute="centerX" secondItem="iY2-QA-Hkm" secondAttribute="centerX" id="PI9-zb-fLm"/>
+                            <constraint firstItem="k3b-aH-eII" firstAttribute="centerY" secondItem="6mv-sN-aNp" secondAttribute="centerY" id="grO-sg-hlt"/>
                             <constraint firstItem="RW5-yA-EQH" firstAttribute="centerX" secondItem="iY2-QA-Hkm" secondAttribute="centerX" id="iTH-cl-XUQ"/>
                             <constraint firstItem="0bp-9k-uC7" firstAttribute="top" secondItem="ova-14-wYO" secondAttribute="bottom" constant="8" id="nxB-sG-Li2"/>
                         </constraints>
@@ -232,6 +237,7 @@
                     <tabBarItem key="tabBarItem" title="Camera" image="camera" id="s9p-Ts-Ypw"/>
                     <connections>
                         <outlet property="captureButton" destination="RW5-yA-EQH" id="sfS-kY-XYj"/>
+                        <outlet property="eventView" destination="k3b-aH-eII" id="hbF-vX-yE6"/>
                         <outlet property="maskView" destination="0bp-9k-uC7" id="ZYb-m5-sRt"/>
                         <outlet property="startButton" destination="xwl-k8-s9C" id="S1H-iM-Uq3"/>
                         <outlet property="timeStampLabel" destination="9u9-2Y-TZs" id="aCr-Wj-RJx"/>

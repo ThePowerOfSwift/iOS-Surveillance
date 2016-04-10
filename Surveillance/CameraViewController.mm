@@ -10,10 +10,15 @@
 //using namespace cv;
 #import <opencv2/videoio/cap_ios.h>
 #include "opencv2/imgcodecs.hpp"
+
 #include "opencv2/imgproc.hpp"
 #include "opencv2/videoio.hpp"
 #include <opencv2/highgui.hpp>
 #include <opencv2/video.hpp>
+#include "opencv2/videoio.hpp"
+#include "opencv2/core/core.hpp"
+
+#import "opencv2/imgcodecs/ios.h"
 #import "AppDelegate.h"
 #import "CameraViewController.h"
 
@@ -22,6 +27,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *maskView;
 @property (strong, nonatomic) IBOutlet UIView *videoView;
 @property (strong, nonatomic) IBOutlet UILabel *timeStampLabel;
+
+@property (strong, nonatomic) IBOutlet UIImageView *eventView;
 
 @property (strong, nonatomic) IBOutlet UIButton *captureButton;
 - (IBAction)captureButtonTapped;
@@ -47,7 +54,7 @@
 @synthesize numberOfInputs;
 @synthesize numberOfEvents;
 @synthesize fgMaskMOG2;
-@synthesize videoCamera;
+@synthesize videoCamera, eventView;
 
 
 - (void)viewDidLoad {
@@ -62,12 +69,8 @@
     videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPreset352x288;
     //_videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPreset1280x720;
     videoCamera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationPortrait;
-    
-    //stop camera from auto adjusting to prevent noise
-    [videoCamera lockBalance];
-    [videoCamera lockExposure];
-    [videoCamera lockFocus];
-    
+    //videoCamera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationLandscapeRight;
+
     // _videoCamera.recordVideo = YES;
     videoCamera.defaultFPS = 30;
     videoCamera.grayscaleMode = NO;
@@ -81,7 +84,7 @@
     onesCountPrevious = -1;
     numberOfEvents = 0;
     numberOfInputs = 0;
-
+    
     //set badge value
     [[[[[self tabBarController] tabBar] items] objectAtIndex:2] setBadgeValue:@"Test"];
 }
@@ -136,6 +139,13 @@
         
         if (onesCount - onesCountPrevious > 5000)
         {
+            cv::Mat eventImage = image;
+            //MAT is in BGR format while iOS uses RGB
+            cvtColor(eventImage, eventImage, CV_BGR2RGB);
+            UIImage* eventUIImage = MatToUIImage(eventImage);
+            //eventView.image = MatToUIImage(eventImage);
+            UIImageWriteToSavedPhotosAlbum(eventUIImage, nil, nil, nil);
+
             //the increase in white pixels indicates new motion has occured
             NSLog(@"onesCountPrevious: %i", onesCountPrevious);
             
@@ -190,18 +200,24 @@
  
     if (videoCamera.running == NO)
     {
+        //stop camera from auto adjusting to prevent noise
+        [videoCamera lockBalance];
+        [videoCamera lockExposure];
+        [videoCamera lockFocus];
         [videoCamera start];
         [sender setTitle: @"Stop" forState: UIControlStateNormal];
     }
     else
     {
+        [videoCamera unlockBalance];
+        [videoCamera unlockExposure];
+        [videoCamera unlockFocus];
         [videoCamera stop];
         [sender setTitle: @"Activate" forState: UIControlStateNormal];
     }
     
     //Show the untouched camera input in videoView
     AVCaptureSession *captureSession = videoCamera.captureSession;
-    
     AVCaptureVideoPreviewLayer *previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:captureSession];
     [previewLayer.connection setVideoOrientation:AVCaptureVideoOrientationPortrait];
     
