@@ -100,6 +100,7 @@
             videoCamera.grayscaleMode = YES;
         else
             videoCamera.grayscaleMode = NO;
+        
         videoCamera.defaultFPS = global.cameraFrameRate;
     }
 }
@@ -139,13 +140,16 @@
         
         if (onesCount - onesCountPrevious > 5000)
         {
-            cv::Mat eventImage = image;
+            /* Crashes for unknown reason
+             cv::Mat backgroundImage;
+            _pMOG2->getBackgroundImage(backgroundImage);
+            
             //MAT is in BGR format while iOS uses RGB
-            cvtColor(eventImage, eventImage, CV_BGR2RGB);
-            UIImage* eventUIImage = MatToUIImage(eventImage);
-            //eventView.image = MatToUIImage(eventImage);
-            UIImageWriteToSavedPhotosAlbum(eventUIImage, nil, nil, nil);
-
+             if (videoCamera.grayscaleMode == NO)
+                cvtColor(backgroundImage, backgroundImage, CV_BGR2RGB);
+            UIImageWriteToSavedPhotosAlbum(MatToUIImage(backgroundImage), nil, nil, nil);
+            */
+            
             //the increase in white pixels indicates new motion has occured
             NSLog(@"onesCountPrevious: %i", onesCountPrevious);
             
@@ -156,22 +160,32 @@
             NSString *newDateString = [outputFormatter stringFromDate:now];
             NSLog(@"Timestamp: %@", newDateString);
             [self.timeStampLabel setText:[outputFormatter stringFromDate:now]];
+            [self.timeStampLabel reloadInputViews];
             
             AppDelegate* global = [UIApplication sharedApplication].delegate;
             [global.tableData addObject:newDateString];
             
+            
+            cv::Mat eventImage = image;
+            //MAT is in BGR format while iOS uses RGB
+            if (videoCamera.grayscaleMode == NO)
+                cvtColor(eventImage, eventImage, CV_BGR2RGB);
+            UIImage* eventUIImage = MatToUIImage(eventImage);
+            //eventView.image = eventUIImage;
+            UIImageWriteToSavedPhotosAlbum(eventUIImage, nil, nil, nil);
+
+            global.mostRecentEventImage = MatToUIImage(eventImage);
+            global.mostRecentEventImage = eventUIImage;
+
+            
             numberOfEvents++;
             NSString* badgeCount = [NSString stringWithFormat:@"%d",numberOfEvents];
-
-            //[[[[[self tabBarController] tabBar] items] objectAtIndex:2] setBadgeValue:@"tset2"];
+            [[[[[self tabBarController] tabBar] items] objectAtIndex:2] setBadgeValue:badgeCount];
         }
     }
     else
     {
         image = fgMaskMOG2;
-        //cv::Mat backgroundImage;
-        //_pMOG2->getBackgroundImage(backgroundImage);
-        //image = backgroundImage;
 
         //get the frame number and write it on the current frame
         rectangle(image, cv::Point(10, 2), cv::Point(100,20), cv::Scalar(255,255,255), -1);

@@ -13,16 +13,20 @@
 @end
 
 @implementation AppDelegate
-@synthesize tableData, isGreyScale, isHighResolution, deviceUniqueName, deviceSymbolicName, identifierForVendor;
+@synthesize tableData, isGreyScale, isHighResolution, deviceUniqueName, deviceSymbolicName, identifierForVendor, mostRecentEventImage;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     //global data variable
     tableData = [NSMutableArray arrayWithObjects:@"Placeholder", nil];
+    [tableData removeObjectAtIndex:0];
     isGreyScale = NO;
     isHighResolution = NO;
     deviceSymbolicName = @"Camera";
     deviceUniqueName = @"Placeholder Name";
+
+    //prevent app from automatically disabling
+    [UIApplication sharedApplication].idleTimerDisabled = YES;
 
     // Override point for customization after application launch.
     

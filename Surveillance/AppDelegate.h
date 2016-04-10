@@ -18,6 +18,8 @@
 @property NSString* deviceUniqueName;
 @property(nonatomic, readonly, strong) NSUUID *identifierForVendor;
 @property int cameraFrameRate;
+@property (strong, nonatomic) UIImage *mostRecentEventImage;
+
 
 @end
 

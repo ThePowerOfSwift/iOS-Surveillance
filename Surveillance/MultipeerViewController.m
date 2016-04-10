@@ -56,14 +56,6 @@
 {
     //sets the tab bar badge value
     /*self.tabBarItem.badgeValue = @"1";
-    //sets the current time on a label
-    NSDate * now = [NSDate date];
-    NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
-    //[outputFormatter setDateFormat:@"HH:mm:ss"];
-    [outputFormatter setDateFormat:@"HH':'mm':'ss' 'dd'/'MM'/'yyyy'"];
-    NSString *newDateString = [outputFormatter stringFromDate:now];
-    NSLog(@"Timestamp: %@", newDateString);
-    
     AppDelegate* test = [UIApplication sharedApplication].delegate;
     NSMutableArray *testData = test.tableData;
     
