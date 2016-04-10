@@ -16,6 +16,12 @@
 @property (strong, nonatomic) IBOutlet UISwitch *greyScaleSwitch;
 - (IBAction)greyScaleSwitched:(id)sender;
 - (IBAction)resolutionSwitched:(UISwitch *)sender;
+@property (strong, nonatomic) IBOutlet UILabel *frameRateValueLabel;
+
+@property (strong, nonatomic) IBOutlet UIStepper *frameRateStepper;
+- (IBAction)frameRateStepperChanged;
+
+
 
 @end
 

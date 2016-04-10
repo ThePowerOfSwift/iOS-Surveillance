@@ -42,4 +42,10 @@
         NSLog(@"Switch off");
     }
 }
+- (IBAction)frameRateStepperChanged {
+    
+    AppDelegate* global = [UIApplication sharedApplication].delegate;
+    global.cameraFrameRate = (int) _frameRateStepper.value;
+    _frameRateValueLabel.text =  @(_frameRateStepper.value).stringValue;;
+}
 @end

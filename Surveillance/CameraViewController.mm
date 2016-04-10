@@ -88,10 +88,15 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     AppDelegate* global = [UIApplication sharedApplication].delegate;
-    if (global.isGreyScale == YES)
-        _videoCamera.grayscaleMode = YES;
-    else
-        _videoCamera.grayscaleMode = NO;
+    
+    if (_videoCamera.running == NO)
+    {
+        if (global.isGreyScale == YES)
+            _videoCamera.grayscaleMode = YES;
+        else
+            _videoCamera.grayscaleMode = NO;
+        _videoCamera.defaultFPS = global.cameraFrameRate;
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -180,11 +185,18 @@
         _videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPreset1280x720;
     else
         _videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPreset352x288;
-
+ 
+    if (_videoCamera.running == NO)
+    {
+        [_videoCamera start];
+        [sender setTitle: @"Stop" forState: UIControlStateNormal];
+    }
+    else
+    {
+        [_videoCamera stop];
+        [sender setTitle: @"Activate" forState: UIControlStateNormal];
+    }
     
-        
-    [_videoCamera start];
-    [_startButton setEnabled:NO];
     //Show the untouched camera input in videoView
     AVCaptureSession *captureSession = _videoCamera.captureSession;
     

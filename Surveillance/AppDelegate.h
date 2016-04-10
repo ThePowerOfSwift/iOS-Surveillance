@@ -17,6 +17,7 @@
 @property NSString* deviceSymbolicName;
 @property NSString* deviceUniqueName;
 @property(nonatomic, readonly, strong) NSUUID *identifierForVendor;
+@property int cameraFrameRate;
 
 @end
 

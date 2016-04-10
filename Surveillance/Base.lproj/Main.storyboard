@@ -41,25 +41,34 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Clip Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9z8-H4-PA8">
-                                <rect key="frame" x="20" y="160" width="100" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Framerate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9z8-H4-PA8">
+                                <rect key="frame" x="20" y="160" width="79" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Sm9-8H-SoP">
-                                <rect key="frame" x="173" y="156" width="94" height="29"/>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" value="30" maximumValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="Sm9-8H-SoP">
+                                <rect key="frame" x="172" y="156" width="94" height="29"/>
+                                <connections>
+                                    <action selector="frameRateStepperChanged" destination="0DP-1j-nuD" eventType="valueChanged" id="A5W-gz-yLB"/>
+                                </connections>
                             </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="High Resolution" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDp-cF-KK4">
+                                <rect key="frame" x="20" y="56" width="121" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ow6-OH-nDU">
                                 <rect key="frame" x="195" y="51" width="51" height="31"/>
                                 <connections>
                                     <action selector="resolutionSwitched:" destination="0DP-1j-nuD" eventType="touchUpInside" id="hnG-6z-BSW"/>
                                 </connections>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="High Resolution" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDp-cF-KK4">
-                                <rect key="frame" x="20" y="56" width="121" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xfy-RX-Y76">
+                                <rect key="frame" x="288" y="160" width="25" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -77,10 +86,14 @@
                             <constraint firstItem="m6i-KL-Z2S" firstAttribute="centerX" secondItem="Sm9-8H-SoP" secondAttribute="centerX" id="VKx-mA-QrM"/>
                             <constraint firstItem="Sm9-8H-SoP" firstAttribute="centerX" secondItem="FeH-bM-83k" secondAttribute="centerX" id="Wym-6z-u7R"/>
                             <constraint firstItem="FeH-bM-83k" firstAttribute="centerY" secondItem="Oju-Ln-xGo" secondAttribute="centerY" id="mmu-od-tqV"/>
+                            <constraint firstItem="Xfy-RX-Y76" firstAttribute="centerY" secondItem="9z8-H4-PA8" secondAttribute="centerY" id="qFk-e8-PZx"/>
+                            <constraint firstItem="Xfy-RX-Y76" firstAttribute="leading" secondItem="Sm9-8H-SoP" secondAttribute="trailing" constant="22" id="qk2-Ny-elU"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="gear" id="TZb-qg-TvM"/>
                     <connections>
+                        <outlet property="frameRateStepper" destination="Sm9-8H-SoP" id="F8g-mo-Dzq"/>
+                        <outlet property="frameRateValueLabel" destination="Xfy-RX-Y76" id="vsa-px-xPz"/>
                         <outlet property="greyScaleSwitch" destination="m6i-KL-Z2S" id="GGv-Wy-Fh2"/>
                         <outlet property="highResolutionSwitch" destination="Ow6-OH-nDU" id="Mu4-IS-YuF"/>
                     </connections>
@@ -182,7 +195,7 @@
                                     <action selector="startTapped:" destination="zMI-4r-66Z" eventType="touchUpInside" id="ASc-xx-4wM"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6mv-sN-aNp" userLabel="VideoView">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6mv-sN-aNp" userLabel="VideoView">
                                 <rect key="frame" x="130" y="260" width="341" height="160"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -207,6 +220,7 @@
                             <constraint firstItem="RW5-yA-EQH" firstAttribute="centerY" secondItem="xwl-k8-s9C" secondAttribute="centerY" id="2pt-N1-5zR"/>
                             <constraint firstItem="0bp-9k-uC7" firstAttribute="centerX" secondItem="iY2-QA-Hkm" secondAttribute="centerX" id="6Kz-xx-rfz"/>
                             <constraint firstItem="RW5-yA-EQH" firstAttribute="leading" secondItem="xwl-k8-s9C" secondAttribute="trailing" constant="46" id="KtY-qb-qIT"/>
+                            <constraint firstItem="6mv-sN-aNp" firstAttribute="centerX" secondItem="iY2-QA-Hkm" secondAttribute="centerX" id="PI9-zb-fLm"/>
                             <constraint firstItem="RW5-yA-EQH" firstAttribute="centerX" secondItem="iY2-QA-Hkm" secondAttribute="centerX" id="iTH-cl-XUQ"/>
                             <constraint firstItem="0bp-9k-uC7" firstAttribute="top" secondItem="ova-14-wYO" secondAttribute="bottom" constant="8" id="nxB-sG-Li2"/>
                         </constraints>
