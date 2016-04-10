@@ -13,15 +13,17 @@
 @end
 
 @implementation AppDelegate
-@synthesize tableData, isGreyScale;
+@synthesize tableData, isGreyScale, isHighResolution, deviceUniqueName, deviceSymbolicName, identifierForVendor;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     //global data variable
     tableData = [NSMutableArray arrayWithObjects:@"Placeholder", nil];
     isGreyScale = NO;
-    NSLog(@"Table Made");
-    
+    isHighResolution = NO;
+    deviceSymbolicName = @"Camera";
+    deviceUniqueName = @"Placeholder Name";
+
     // Override point for customization after application launch.
     
     //Colin moved this stuff to interface builder

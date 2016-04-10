@@ -13,6 +13,10 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) NSMutableArray *tableData;
 @property BOOL isGreyScale;
+@property BOOL isHighResolution;
+@property NSString* deviceSymbolicName;
+@property NSString* deviceUniqueName;
+@property(nonatomic, readonly, strong) NSUUID *identifierForVendor;
 
 @end
 

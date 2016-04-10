@@ -172,13 +172,18 @@
 
 
 - (IBAction)startTapped:(UIButton *)sender {
+
+    AppDelegate* global = [UIApplication sharedApplication].delegate;
+    if (global.isHighResolution == YES)
+        _videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPreset1280x720;
+
+    
     [_videoCamera start];
     
     //Show the untouched camera input in videoView
     AVCaptureSession *captureSession = _videoCamera.captureSession;
     
     AVCaptureVideoPreviewLayer *previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:captureSession];
-    //_videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPreset1280x720;
     [previewLayer.connection setVideoOrientation:AVCaptureVideoOrientationPortrait];
     
     UIView *aView = self.videoView;
