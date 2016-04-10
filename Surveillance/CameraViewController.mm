@@ -6,7 +6,6 @@
 //  Copyright © 2016 Colin Power. All rights reserved.
 //
 
-//test comment to test source control 2
 #include <opencv2/opencv.hpp>
 //using namespace cv;
 #import <opencv2/videoio/cap_ios.h>
@@ -16,7 +15,6 @@
 #include <opencv2/highgui.hpp>
 #include <opencv2/video.hpp>
 #import "AppDelegate.h"
-
 #import "CameraViewController.h"
 
 @interface CameraViewController () <CvVideoCameraDelegate>
