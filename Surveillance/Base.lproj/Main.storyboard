@@ -24,10 +24,13 @@
                                     <action selector="greyScaleSwitched:" destination="0DP-1j-nuD" eventType="touchUpInside" id="5HX-QL-oUB"/>
                                 </connections>
                             </switch>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FeH-bM-83k">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FeH-bM-83k" userLabel="Name Input">
                                 <rect key="frame" x="171" y="106" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="deviceNameInputFieldEdit:" destination="0DP-1j-nuD" eventType="editingDidEnd" id="Ib8-h9-PjO"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Device Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oju-Ln-xGo">
                                 <rect key="frame" x="20" y="110" width="102" height="21"/>
@@ -92,6 +95,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="gear" id="TZb-qg-TvM"/>
                     <connections>
+                        <outlet property="deviceNameInputField" destination="FeH-bM-83k" id="WWT-y1-lby"/>
                         <outlet property="frameRateStepper" destination="Sm9-8H-SoP" id="F8g-mo-Dzq"/>
                         <outlet property="frameRateValueLabel" destination="Xfy-RX-Y76" id="vsa-px-xPz"/>
                         <outlet property="greyScaleSwitch" destination="m6i-KL-Z2S" id="GGv-Wy-Fh2"/>

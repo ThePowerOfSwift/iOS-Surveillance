@@ -12,6 +12,10 @@
 
 @implementation SettingsViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+}
 
 - (IBAction)greyScaleSwitched:(id)sender {
 
@@ -42,10 +46,19 @@
         NSLog(@"Switch off");
     }
 }
+
 - (IBAction)frameRateStepperChanged {
     
     AppDelegate* global = [UIApplication sharedApplication].delegate;
     global.cameraFrameRate = (int) _frameRateStepper.value;
-    _frameRateValueLabel.text =  @(_frameRateStepper.value).stringValue;;
+    _frameRateValueLabel.text =  @(_frameRateStepper.value).stringValue;
 }
+
+- (IBAction)deviceNameInputFieldEdit:(UITextField *)sender {
+    //todo
+    AppDelegate* global = [UIApplication sharedApplication].delegate;
+    global.deviceSymbolicName = sender.text;
+    [sender resignFirstResponder];
+}
+
 @end

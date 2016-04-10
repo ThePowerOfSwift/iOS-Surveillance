@@ -20,7 +20,9 @@
 
 @property (strong, nonatomic) IBOutlet UIStepper *frameRateStepper;
 - (IBAction)frameRateStepperChanged;
+- (IBAction)deviceNameInputFieldEdit:(UITextField *)sender;
 
+@property (strong, nonatomic) IBOutlet UITextField *deviceNameInputField;
 
 
 @end

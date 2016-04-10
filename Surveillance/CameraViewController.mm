@@ -47,6 +47,8 @@
 @synthesize numberOfInputs;
 @synthesize numberOfEvents;
 @synthesize fgMaskMOG2;
+@synthesize videoCamera;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -54,22 +56,22 @@
     self.timeStampLabel.text = @"Placeholder";
     
     //setup camera stream
-    _videoCamera = [[CvVideoCamera alloc] initWithParentView:_maskView];
+    videoCamera = [[CvVideoCamera alloc] initWithParentView:_maskView];
     //[_videoCamera setDefaultAVCaptureSessionPreset:AVCaptureDevicePositionFront];
-    _videoCamera.defaultAVCaptureDevicePosition = AVCaptureDevicePositionBack;
-    _videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPreset352x288;
+    videoCamera.defaultAVCaptureDevicePosition = AVCaptureDevicePositionBack;
+    videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPreset352x288;
     //_videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPreset1280x720;
-    _videoCamera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationPortrait;
+    videoCamera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationPortrait;
     
     //stop camera from auto adjusting to prevent noise
-    [_videoCamera lockBalance];
-    [_videoCamera lockExposure];
-    [_videoCamera lockFocus];
+    [videoCamera lockBalance];
+    [videoCamera lockExposure];
+    [videoCamera lockFocus];
     
     // _videoCamera.recordVideo = YES;
-    _videoCamera.defaultFPS = 30;
-    _videoCamera.grayscaleMode = NO;
-    _videoCamera.delegate = self;
+    videoCamera.defaultFPS = 30;
+    videoCamera.grayscaleMode = NO;
+    videoCamera.delegate = self;
 
     //setup MOG2 operation
     _pMOG2 = cv::createBackgroundSubtractorMOG2(1500, 16, false);
@@ -89,13 +91,13 @@
 {
     AppDelegate* global = [UIApplication sharedApplication].delegate;
     
-    if (_videoCamera.running == NO)
+    if (videoCamera.running == NO)
     {
         if (global.isGreyScale == YES)
-            _videoCamera.grayscaleMode = YES;
+            videoCamera.grayscaleMode = YES;
         else
-            _videoCamera.grayscaleMode = NO;
-        _videoCamera.defaultFPS = global.cameraFrameRate;
+            videoCamera.grayscaleMode = NO;
+        videoCamera.defaultFPS = global.cameraFrameRate;
     }
 }
 
@@ -182,23 +184,23 @@
 
     AppDelegate* global = [UIApplication sharedApplication].delegate;
     if (global.isHighResolution == YES)
-        _videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPreset1280x720;
+        videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPreset1280x720;
     else
-        _videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPreset352x288;
+        videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPreset352x288;
  
-    if (_videoCamera.running == NO)
+    if (videoCamera.running == NO)
     {
-        [_videoCamera start];
+        [videoCamera start];
         [sender setTitle: @"Stop" forState: UIControlStateNormal];
     }
     else
     {
-        [_videoCamera stop];
+        [videoCamera stop];
         [sender setTitle: @"Activate" forState: UIControlStateNormal];
     }
     
     //Show the untouched camera input in videoView
-    AVCaptureSession *captureSession = _videoCamera.captureSession;
+    AVCaptureSession *captureSession = videoCamera.captureSession;
     
     AVCaptureVideoPreviewLayer *previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:captureSession];
     [previewLayer.connection setVideoOrientation:AVCaptureVideoOrientationPortrait];
