@@ -11,18 +11,17 @@
 #import "AppDelegate.h"
 @implementation MultipeerViewController
 {
-   // NSMutableArray *tableData;
+    
 }
 -(void) viewDidLoad
 {
-    //(YourAppDelegateClass *)[UIApplication sharedApplication].delegat
-    AppDelegate* test = [UIApplication sharedApplication].delegate;
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    AppDelegate* test = [UIApplication sharedApplication].delegate;
-    NSMutableArray *testData = test.tableData;
+    AppDelegate* global = [UIApplication sharedApplication].delegate;
+    NSMutableArray *testData = global.tableData;
     return [testData count];
 }
 
@@ -44,8 +43,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    AppDelegate* test = [UIApplication sharedApplication].delegate;
-    NSMutableArray *testData = test.tableData;
+    AppDelegate* global = [UIApplication sharedApplication].delegate;
+    NSMutableArray *testData = global.tableData;
     
     cell.textLabel.text = [testData objectAtIndex:indexPath.row];
     cell.imageView.image = [UIImage imageNamed:@"camera"];

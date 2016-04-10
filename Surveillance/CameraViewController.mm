@@ -90,6 +90,8 @@
     AppDelegate* global = [UIApplication sharedApplication].delegate;
     if (global.isGreyScale == YES)
         _videoCamera.grayscaleMode = YES;
+    else
+        _videoCamera.grayscaleMode = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -176,10 +178,13 @@
     AppDelegate* global = [UIApplication sharedApplication].delegate;
     if (global.isHighResolution == YES)
         _videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPreset1280x720;
+    else
+        _videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPreset352x288;
 
     
+        
     [_videoCamera start];
-    
+    [_startButton setEnabled:NO];
     //Show the untouched camera input in videoView
     AVCaptureSession *captureSession = _videoCamera.captureSession;
     
@@ -189,7 +194,6 @@
     UIView *aView = self.videoView;
     previewLayer.frame = aView.bounds; // Assume you want the preview layer to fill the view.
     [aView.layer addSublayer:previewLayer];
-    
 }
 
 

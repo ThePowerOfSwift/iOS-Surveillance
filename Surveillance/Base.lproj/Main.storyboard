@@ -18,17 +18,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m6i-KL-Z2S">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="m6i-KL-Z2S">
                                 <rect key="frame" x="195" y="205" width="51" height="31"/>
+                                <connections>
+                                    <action selector="greyScaleSwitched:" destination="0DP-1j-nuD" eventType="touchUpInside" id="5HX-QL-oUB"/>
+                                </connections>
                             </switch>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FeH-bM-83k">
                                 <rect key="frame" x="171" y="106" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="QBV-M4-TzW">
-                                <rect key="frame" x="174" y="52" width="91" height="31"/>
-                            </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Device Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oju-Ln-xGo">
                                 <rect key="frame" x="20" y="110" width="102" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -50,8 +50,14 @@
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Sm9-8H-SoP">
                                 <rect key="frame" x="173" y="156" width="94" height="29"/>
                             </stepper>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Compression Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDp-cF-KK4">
-                                <rect key="frame" x="20" y="56" width="140" height="21"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ow6-OH-nDU">
+                                <rect key="frame" x="195" y="51" width="51" height="31"/>
+                                <connections>
+                                    <action selector="resolutionSwitched:" destination="0DP-1j-nuD" eventType="touchUpInside" id="hnG-6z-BSW"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="High Resolution" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDp-cF-KK4">
+                                <rect key="frame" x="20" y="56" width="121" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -59,13 +65,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="QBV-M4-TzW" firstAttribute="leading" secondItem="JDp-cF-KK4" secondAttribute="trailing" constant="16" id="1Xr-D5-FC1"/>
                             <constraint firstItem="9z8-H4-PA8" firstAttribute="leading" secondItem="JDp-cF-KK4" secondAttribute="leading" id="82m-qE-RRU"/>
                             <constraint firstItem="jOl-ZE-dDD" firstAttribute="top" secondItem="9z8-H4-PA8" secondAttribute="bottom" constant="29" id="Cy6-rC-qYg"/>
                             <constraint firstItem="JDp-cF-KK4" firstAttribute="leading" secondItem="Oju-Ln-xGo" secondAttribute="leading" id="FwG-mH-fYl"/>
                             <constraint firstItem="jOl-ZE-dDD" firstAttribute="leading" secondItem="JDp-cF-KK4" secondAttribute="leading" id="HUY-E8-Xv4"/>
                             <constraint firstItem="9z8-H4-PA8" firstAttribute="top" secondItem="Oju-Ln-xGo" secondAttribute="bottom" constant="29" id="L4G-pR-f71"/>
-                            <constraint firstItem="FeH-bM-83k" firstAttribute="centerX" secondItem="QBV-M4-TzW" secondAttribute="centerX" id="LIN-0t-Xlv"/>
                             <constraint firstAttribute="leadingMargin" secondItem="JDp-cF-KK4" secondAttribute="leading" id="LZZ-1B-kAC"/>
                             <constraint firstItem="m6i-KL-Z2S" firstAttribute="centerY" secondItem="jOl-ZE-dDD" secondAttribute="centerY" id="Ow6-Gc-Lk6"/>
                             <constraint firstItem="Sm9-8H-SoP" firstAttribute="centerY" secondItem="9z8-H4-PA8" secondAttribute="centerY" id="QCm-wL-VQj"/>
@@ -73,10 +77,13 @@
                             <constraint firstItem="m6i-KL-Z2S" firstAttribute="centerX" secondItem="Sm9-8H-SoP" secondAttribute="centerX" id="VKx-mA-QrM"/>
                             <constraint firstItem="Sm9-8H-SoP" firstAttribute="centerX" secondItem="FeH-bM-83k" secondAttribute="centerX" id="Wym-6z-u7R"/>
                             <constraint firstItem="FeH-bM-83k" firstAttribute="centerY" secondItem="Oju-Ln-xGo" secondAttribute="centerY" id="mmu-od-tqV"/>
-                            <constraint firstItem="QBV-M4-TzW" firstAttribute="centerY" secondItem="JDp-cF-KK4" secondAttribute="centerY" id="s6r-RD-Rqj"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="gear" id="TZb-qg-TvM"/>
+                    <connections>
+                        <outlet property="greyScaleSwitch" destination="m6i-KL-Z2S" id="GGv-Wy-Fh2"/>
+                        <outlet property="highResolutionSwitch" destination="Ow6-OH-nDU" id="Mu4-IS-YuF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BwM-kf-hqW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

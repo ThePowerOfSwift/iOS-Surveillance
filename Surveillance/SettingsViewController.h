@@ -9,8 +9,13 @@
 #ifndef SettingsViewController_h
 #define SettingsViewController_h
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
 @interface SettingsViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UISwitch *highResolutionSwitch;
+@property (strong, nonatomic) IBOutlet UISwitch *greyScaleSwitch;
+- (IBAction)greyScaleSwitched:(id)sender;
+- (IBAction)resolutionSwitched:(UISwitch *)sender;
 
 @end
 
