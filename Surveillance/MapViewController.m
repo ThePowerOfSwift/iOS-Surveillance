@@ -103,11 +103,16 @@
 
 - (NSString*) getDeviceName
 {
-    return @"Hello world";
+    NSString* uniqueName = @"Nothing";
+    NSUUID *oNSUUID = [[UIDevice currentDevice] identifierForVendor];
+    uniqueName = [oNSUUID UUIDString];
+    NSLog(uniqueName);
+    return uniqueName;
 }
 
-- (void) eventHappened:(NSString*)devicename fname:(NSString*)fname
+- (void) eventHappened:(NSString*)fname
 {
+    NSString *me = [self getDeviceName];
     NSString *tmpLat = [[NSString alloc] initWithFormat:@"%f", locMe.latitude];
     NSString *tmpLong = [[NSString alloc] initWithFormat:@"%f", locMe.longitude];
     
@@ -118,7 +123,7 @@
     NSDate *startdates = [dateFormat dateFromString:prettyVersion];
     NSLog(@"Timestamp %0.0f",[startdates timeIntervalSince1970]);
     
-    [self saveEventToDatabase:devicename fname:fname lat:tmpLat longi:tmpLong tstamp:prettyVersion];
+    [self saveEventToDatabase:me fname:fname lat:tmpLat longi:tmpLong tstamp:prettyVersion];
 }
 
 - (void) saveEventToDatabase:(NSString*)devicename fname:(NSString*)fname lat:(NSString*)latitude longi:(NSString*)longitude tstamp:(NSString*)timestamp
