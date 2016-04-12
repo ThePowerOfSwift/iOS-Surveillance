@@ -246,6 +246,7 @@
     //generate timestamp for testing
 }
 
+
 - (cv::Mat)cvMatFromUIImage:(UIImage *)image
 {
     CGColorSpaceRef colorSpace = CGImageGetColorSpace(image.CGImage);

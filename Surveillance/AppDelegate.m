@@ -13,7 +13,7 @@
 @end
 
 @implementation AppDelegate
-@synthesize tableData, isGreyScale, isHighResolution, deviceUniqueName, deviceSymbolicName, identifierForVendor, mostRecentEventImage;
+@synthesize tableData, isGreyScale, isHighResolution, deviceUniqueName, deviceSymbolicName, identifierForVendor, mostRecentEventImage, isMotionDetectionOn;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
@@ -24,6 +24,7 @@
     isHighResolution = NO;
     deviceSymbolicName = @"Camera";
     deviceUniqueName = @"Placeholder Name";
+    isMotionDetectionOn = NO;
 
     //prevent app from automatically disabling
     [UIApplication sharedApplication].idleTimerDisabled = YES;

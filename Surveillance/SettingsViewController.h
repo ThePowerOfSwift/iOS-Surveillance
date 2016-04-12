@@ -10,6 +10,8 @@
 #define SettingsViewController_h
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
+#import <CoreMotion/CoreMotion.h>
+#import <CoreMotion/CMSensorRecorder.h>
 
 @interface SettingsViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UISwitch *highResolutionSwitch;
@@ -21,9 +23,15 @@
 @property (strong, nonatomic) IBOutlet UIStepper *frameRateStepper;
 - (IBAction)frameRateStepperChanged;
 - (IBAction)deviceNameInputFieldEdit:(UITextField *)sender;
+@property (strong, nonatomic) IBOutlet UISwitch *earthquakeDetectorSwitch;
 
 @property (strong, nonatomic) IBOutlet UITextField *deviceNameInputField;
-
+- (IBAction)earthquakeDetectorSwitched:(UISwitch *)sender;
+@property (strong,nonatomic) CMMotionManager *manager;
+@property (strong,nonatomic) CMSensorRecorder *recorder;
+@property (nonatomic, retain) NSTimer *timer;
+@property double xAcc, yAcc, zAcc;
+#define kMOTIONUPDATEINTERVAL 2
 
 @end
 

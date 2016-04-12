@@ -24,7 +24,7 @@
                                 <items>
                                     <tabBarItem title="Camera" image="camera" id="ZJL-4J-bYr"/>
                                     <tabBarItem title="Map" image="earth" id="Olt-zB-YGJ"/>
-                                    <tabBarItem title="MultiPeer" image="multipeer" id="zAP-Ni-mAd"/>
+                                    <tabBarItem title="Event Data" image="multipeer" id="zAP-Ni-mAd"/>
                                     <tabBarItem title="Settings" image="gear" id="W3D-7r-hoa"/>
                                 </items>
                             </tabBar>
