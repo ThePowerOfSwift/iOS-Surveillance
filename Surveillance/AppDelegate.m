@@ -22,7 +22,7 @@
     [tableData removeObjectAtIndex:0];
     isGreyScale = NO;
     isHighResolution = NO;
-    deviceSymbolicName = @"Camera";
+    deviceSymbolicName = @"Colin's Camera";
     deviceUniqueName = @"Placeholder Name";
     isMotionDetectionOn = NO;
 

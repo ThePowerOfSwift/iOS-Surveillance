@@ -21,6 +21,7 @@
 #import "opencv2/imgcodecs/ios.h"
 #import "AppDelegate.h"
 #import "CameraViewController.h"
+#import "MapViewController.h"
 
 //UI elemenets
 @interface CameraViewController () <CvVideoCameraDelegate>
@@ -28,10 +29,10 @@
 @property (strong, nonatomic) IBOutlet UIView *videoView;
 @property (strong, nonatomic) IBOutlet UILabel *timeStampLabel;
 
-@property (strong, nonatomic) IBOutlet UIImageView *eventView;
+//@property (strong, nonatomic) IBOutlet UIImageView *eventView;
 
-@property (strong, nonatomic) IBOutlet UIButton *captureButton;
-- (IBAction)captureButtonTapped;
+//@property (strong, nonatomic) IBOutlet UIButton *captureButton;
+//- (IBAction)captureButtonTapped;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 - (IBAction)startTapped:(UIButton *)sender;
 
@@ -54,7 +55,7 @@
 @synthesize numberOfInputs;
 @synthesize numberOfEvents;
 @synthesize fgMaskMOG2;
-@synthesize videoCamera, eventView;
+@synthesize videoCamera;
 
 
 - (void)viewDidLoad {
@@ -173,11 +174,18 @@
             UIImage* eventUIImage = MatToUIImage(eventImage);
             //eventView.image = eventUIImage;
             UIImageWriteToSavedPhotosAlbum(eventUIImage, nil, nil, nil);
-
+            
+            //this works but is currently unused in the UI. Intent is to add to tableView cell content
             global.mostRecentEventImage = MatToUIImage(eventImage);
             global.mostRecentEventImage = eventUIImage;
+            
+            
+            [[[[self tabBarController] childViewControllers] objectAtIndex:1] eventHappened:global.deviceSymbolicName];
+            
+            //- (void) eventHappened:(NSString*)fname
 
             
+            //update badge count when an event occurs
             numberOfEvents++;
             NSString* badgeCount = [NSString stringWithFormat:@"%d",numberOfEvents];
             [[[[[self tabBarController] tabBar] items] objectAtIndex:2] setBadgeValue:badgeCount];
@@ -240,11 +248,11 @@
     [aView.layer addSublayer:previewLayer];
 }
 
-
+/*
 - (IBAction)captureButtonTapped {
     //save current image
     //generate timestamp for testing
-}
+}*/
 
 
 - (cv::Mat)cvMatFromUIImage:(UIImage *)image

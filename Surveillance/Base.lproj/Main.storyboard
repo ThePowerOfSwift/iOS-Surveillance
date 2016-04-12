@@ -29,7 +29,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="deviceNameInputFieldEdit:" destination="0DP-1j-nuD" eventType="editingDidEnd" id="Ib8-h9-PjO"/>
+                                    <action selector="deviceNameInputFieldEdit:" destination="0DP-1j-nuD" eventType="editingDidEndOnExit" id="ryK-3B-0Pc"/>
+                                    <outlet property="delegate" destination="qOD-f8-b6k" id="iyu-xO-3bv"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Device Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oju-Ln-xGo">

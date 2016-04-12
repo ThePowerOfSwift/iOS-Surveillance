@@ -58,10 +58,10 @@
 }
 
 - (IBAction)deviceNameInputFieldEdit:(UITextField *)sender {
-    //todo
+
     AppDelegate* global = [UIApplication sharedApplication].delegate;
     global.deviceSymbolicName = sender.text;
-    [sender resignFirstResponder];
+    [self.view endEditing:TRUE];
 }
 
 - (IBAction)earthquakeDetectorSwitched:(UISwitch *)sender {
